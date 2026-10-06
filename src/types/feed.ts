@@ -2,6 +2,18 @@ export type Category = 'all' | 'ai' | 'frontend' | 'backend' | 'devops' | 'archi
 
 export type SortOrder = 'for_you' | 'top' | 'latest';
 
+export type StackCategory = 'Frontend' | 'AI / LLM' | 'Backend / DB' | 'DevOps / Cloud' | 'Architecture';
+
+export type StackPriority = 'HIGH' | 'MEDIUM' | 'LOW';
+
+export interface InterestTopic {
+  name: string;
+  category: StackCategory;
+  priority: StackPriority;
+  active: boolean;
+  isCustom?: boolean;
+}
+
 export interface TechArticle {
   id: string;
   title: string;
@@ -21,12 +33,9 @@ export interface TechArticle {
 }
 
 export interface UserInterestProfile {
-  topics: {
-    name: string;
-    weight: number; // 0.1 to 1.0
-    active: boolean;
-  }[];
-  level: 'Beginner' | 'Intermediate' | 'Senior / Lead';
+  topics: InterestTopic[];
+  level: 'Junior' | 'Mid' | 'Senior / Lead' | 'Architect / Tech Lead';
+  presetName?: string;
 }
 
 export interface ScoredArticle extends TechArticle {
