@@ -9,6 +9,48 @@ import type {
 } from '../types/feed';
 
 export const INITIAL_TOPICS_CATALOG: InterestTopic[] = [
+  // Backend / Server-Side Languages & Frameworks (大充実化)
+  { name: 'Go', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'Gin', category: 'Backend / DB', priority: 'MEDIUM', active: true },
+  { name: 'Echo', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Fiber', category: 'Backend / DB', priority: 'LOW', active: false },
+
+  { name: 'Python', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'FastAPI', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'Django', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+
+  { name: 'Rust', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'Axum', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'Actix-web', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+
+  { name: 'Ruby', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Ruby on Rails', category: 'Backend / DB', priority: 'HIGH', active: false },
+
+  { name: 'PHP', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Laravel', category: 'Backend / DB', priority: 'HIGH', active: false },
+
+  { name: 'Java', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Spring Boot', category: 'Backend / DB', priority: 'HIGH', active: false },
+  { name: 'Kotlin', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Ktor', category: 'Backend / DB', priority: 'LOW', active: false },
+
+  { name: 'C#', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'ASP.NET Core', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+
+  { name: 'Node.js', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'NestJS', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'Hono', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'Fastify', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Express', category: 'Backend / DB', priority: 'LOW', active: false },
+
+  // Databases & Storage
+  { name: 'PostgreSQL', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'MySQL', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'Redis', category: 'Backend / DB', priority: 'MEDIUM', active: true },
+  { name: 'GraphQL', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+  { name: 'gRPC', category: 'Backend / DB', priority: 'HIGH', active: true },
+  { name: 'SQL', category: 'Backend / DB', priority: 'MEDIUM', active: false },
+
   // Frontend
   { name: 'TypeScript', category: 'Frontend', priority: 'HIGH', active: true },
   { name: 'Next.js', category: 'Frontend', priority: 'HIGH', active: true },
@@ -27,30 +69,20 @@ export const INITIAL_TOPICS_CATALOG: InterestTopic[] = [
   { name: 'Local LLM', category: 'AI / LLM', priority: 'MEDIUM', active: false },
   { name: 'WebGPU', category: 'AI / LLM', priority: 'MEDIUM', active: false },
   { name: 'Observability', category: 'AI / LLM', priority: 'HIGH', active: true },
-  { name: 'Python', category: 'AI / LLM', priority: 'MEDIUM', active: false },
-
-  // Backend / DB
-  { name: 'Rust', category: 'Backend / DB', priority: 'HIGH', active: true },
-  { name: 'Node.js', category: 'Backend / DB', priority: 'MEDIUM', active: true },
-  { name: 'Go', category: 'Backend / DB', priority: 'MEDIUM', active: false },
-  { name: 'PostgreSQL', category: 'Backend / DB', priority: 'HIGH', active: true },
-  { name: 'Database', category: 'Backend / DB', priority: 'MEDIUM', active: true },
-  { name: 'Redis', category: 'Backend / DB', priority: 'LOW', active: false },
-  { name: 'GraphQL', category: 'Backend / DB', priority: 'LOW', active: false },
-  { name: 'SQL', category: 'Backend / DB', priority: 'MEDIUM', active: false },
 
   // DevOps / Cloud
   { name: 'Cloudflare', category: 'DevOps / Cloud', priority: 'MEDIUM', active: true },
   { name: 'Edge', category: 'DevOps / Cloud', priority: 'MEDIUM', active: true },
-  { name: 'Docker', category: 'DevOps / Cloud', priority: 'MEDIUM', active: false },
+  { name: 'Docker', category: 'DevOps / Cloud', priority: 'HIGH', active: true },
   { name: 'Kamal', category: 'DevOps / Cloud', priority: 'MEDIUM', active: false },
   { name: 'CI/CD', category: 'DevOps / Cloud', priority: 'HIGH', active: true },
-  { name: 'DevOps', category: 'DevOps / Cloud', priority: 'MEDIUM', active: false },
+  { name: 'Kubernetes', category: 'DevOps / Cloud', priority: 'MEDIUM', active: false },
 
   // Architecture & Culture
   { name: 'Architecture', category: 'Architecture', priority: 'HIGH', active: true },
   { name: 'Modular Monolith', category: 'Architecture', priority: 'HIGH', active: false },
   { name: 'DDD', category: 'Architecture', priority: 'MEDIUM', active: false },
+  { name: 'Microservices', category: 'Architecture', priority: 'HIGH', active: true },
   { name: 'Productivity', category: 'Architecture', priority: 'HIGH', active: true },
   { name: 'Remote Work', category: 'Architecture', priority: 'MEDIUM', active: true }
 ];
@@ -58,23 +90,33 @@ export const INITIAL_TOPICS_CATALOG: InterestTopic[] = [
 export const PROFILE_PRESETS: { name: string; description: string; topicNames: string[] }[] = [
   {
     name: 'TS / Next.js フルスタック',
-    description: 'TypeScript, Next.js, React, SSR, Tailwind, PostgreSQL を軸にした現代的Web開発者',
-    topicNames: ['TypeScript', 'Next.js', 'React', 'SSR', 'Tailwind CSS', 'PostgreSQL', 'Web Performance', 'CI/CD']
+    description: 'TypeScript, Next.js, React, SSR, Hono, PostgreSQL を軸にした現代的Web開発者',
+    topicNames: ['TypeScript', 'Next.js', 'React', 'SSR', 'Hono', 'PostgreSQL', 'Web Performance', 'CI/CD']
   },
   {
-    name: 'AIエージェント & LLMスペシャリスト',
-    description: '自律AIエージェント、LLM運用、RAG、分散トレース、ローカルLLMに特化',
-    topicNames: ['AI Agent', 'LLM', 'RAG', 'Vector Search', 'Observability', 'Local LLM', 'WebGPU', 'Python']
+    name: 'Go / マイクロサービス基盤',
+    description: 'Go (Golang), Gin/Echo, gRPC, Docker, PostgreSQL による高スループットAPI設計',
+    topicNames: ['Go', 'Gin', 'Echo', 'gRPC', 'PostgreSQL', 'Docker', 'Microservices', 'Architecture']
   },
   {
-    name: 'ハイパフォーマンス & Rust / Go',
-    description: 'Rust, Web Performance, Edge, 高速ビルドツール, 並行処理に関心が高いシステム志向',
-    topicNames: ['Rust', 'Web Performance', 'Edge', 'Cloudflare', 'Go', 'Modular Monolith', 'PostgreSQL']
+    name: 'Python / FastAPI ＆ AIバックエンド',
+    description: 'Python, FastAPI, AI Agent, LLM, RAG, PostgreSQL による生成AI・API基盤開発',
+    topicNames: ['Python', 'FastAPI', 'AI Agent', 'LLM', 'RAG', 'PostgreSQL', 'Observability']
   },
   {
-    name: 'モダンDevOps & クラウド設計',
-    description: 'Edgeコンピューティング, Docker, CI/CD, クラウドインフラ, コスト効率化',
-    topicNames: ['Cloudflare', 'Edge', 'Docker', 'Kamal', 'CI/CD', 'DevOps', 'PostgreSQL', 'Architecture']
+    name: 'Rust / 高速バックエンド (Axum)',
+    description: 'Rust, Axum, Actix-web, Web Performance, Edge による超低遅延サーバー設計',
+    topicNames: ['Rust', 'Axum', 'Web Performance', 'Edge', 'Cloudflare', 'PostgreSQL', 'Architecture']
+  },
+  {
+    name: 'Rails / Laravel Webアプリケーション',
+    description: 'Ruby on Rails, Laravel, PHP, MySQL, Docker を活用した堅牢なプロダクト開発',
+    topicNames: ['Ruby', 'Ruby on Rails', 'PHP', 'Laravel', 'Docker', 'PostgreSQL', 'Productivity']
+  },
+  {
+    name: 'Java (Spring Boot) / 大規模分散基盤',
+    description: 'Java, Spring Boot, Kotlin, DDD, マイクロサービスによるエンタープライズ開発',
+    topicNames: ['Java', 'Spring Boot', 'Kotlin', 'DDD', 'Microservices', 'Architecture', 'PostgreSQL']
   }
 ];
 
@@ -106,7 +148,7 @@ export function scoreArticle(article: TechArticle, profile: UserInterestProfile)
     }
   });
 
-  // Upvote popularity bonus (capped at 14 points)
+  // Upvote popularity bonus
   const popularityBonus = Math.min(14, Math.round(article.upvotes / 48));
 
   // Freshness bonus
